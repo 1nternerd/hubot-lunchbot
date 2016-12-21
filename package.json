@@ -1,7 +1,7 @@
 {
   "name": "hubot-lunchbot",
   "description": "An easy way to keep track of lunch in your office",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Thomas Lutz <thomaslutz.de@gmail.com>",
   "license": "MIT",
 
@@ -9,7 +9,8 @@
     "hubot",
     "hubot-scripts",
     "hubot-lunch",
-    "lunch"
+    "lunch",
+    "lunchbot"
   ],
 
   "repository": {
