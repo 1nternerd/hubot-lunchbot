@@ -52,8 +52,8 @@ module.exports = (robot) ->
 
   # Explain how to use the lunch bot
   MESSAGE = """
-  Let's order lunch!!!1 You can say:
-  #{robot.name} I want the BLT Sandwich - adds "BLT Sandwich" to the list of items to be ordered
+  Let's order lunch by using the cool bot! You can say:
+  #{robot.name} I want BLT Sandwich - adds "BLT Sandwich" to the list of items to be ordered
   #{robot.name} remove my order - removes your order
   #{robot.name} cancel all orders - cancels all the orders
   #{robot.name} lunch orders - lists all orders
@@ -129,8 +129,8 @@ module.exports = (robot) ->
     lunch.clear()
 
   ##
-  # Help decided who should either order, pick up or get
-  robot.respond /who should (order|pick up|get) lunch?/i, (msg) ->
+  # Help decided who should either order, pickup or get
+  robot.respond /who should (order|pickup|get) lunch?/i, (msg) ->
     orders = lunch.get().map (user) -> user
     key = Math.floor(Math.random() * orders.length)
     if orders[key]?
