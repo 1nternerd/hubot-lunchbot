@@ -27,15 +27,15 @@
 
 ##
 # What room do you want to post the lunch messages in?
-ROOM = process.env.HUBOT_LUNCHBOT_ROOM
+ROOM = process.env.HUBOT_LUNCHBOT_ROOM || 'general'
 
 ##
 # Set to local timezone
-TIMEZONE = process.env.TZ
+TIMEZONE = process.env.TZ || 'Europe/Berlin' # default timezone
 
 ##
 # Default lunch time
-NOTIFY_AT = process.env.HUBOT_LUNCHBOT_NOTIFY_AT || '0 0 11 * * *' # 11am everyday
+NOTIFY_AT = process.env.HUBOT_LUNCHBOT_NOTIFY_AT || '0 0 10 * Tue *' # 10 am on Tuesday
 
 ##
 # clear the lunch order on a schedule
@@ -46,6 +46,9 @@ CLEAR_AT = process.env.HUBOT_LUNCHBOT_CLEAR_AT || '0 0 0 * * *' # midnight
 CronJob = require("cron").CronJob
 
 module.exports = (robot) ->
+
+  # Make sure the lunch dictionary exists
+  robot.brain.data.lunch = robot.brain.data.lunch || {}
 
   # Explain how to use the lunch bot
   MESSAGE = """

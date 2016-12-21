@@ -1,4 +1,4 @@
-# hubot-lunch
+# hubot-lunchbot
 
 A bot to help keep track of lunch orders for your office.
 
@@ -7,13 +7,13 @@ A bot to help keep track of lunch orders for your office.
 Add dependency to `package.json`:
 
 ```console
-$ npm install --save hubot-lunch
+$ npm install --save hubot-lunchbot
 ```
 
 Include package in Hubot's `external-scripts.json`:
 
 ```json
-["hubot-lunch"]
+["hubot-lunchbot"]
 ```
 
 ## Configuration
