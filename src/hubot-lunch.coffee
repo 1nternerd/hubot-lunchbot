@@ -134,7 +134,7 @@ module.exports = (robot) ->
     orders = lunch.get().map (user) -> user
     key = Math.floor(Math.random() * orders.length)
     if orders[key]?
-      msg.send "#{orders[key]} looks like you have to #{msg.match[1]} lunch today!"
+      msg.send "@#{orders[key]} looks like you have to #{msg.match[1]} lunch today!"
     else
       msg.send "Hmm... Looks like no one has ordered any lunch yet today."
 
