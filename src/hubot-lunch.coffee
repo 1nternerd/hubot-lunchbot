@@ -35,11 +35,13 @@ TIMEZONE = process.env.TZ || 'Europe/Berlin' # default timezone
 
 ##
 # Default lunch time
-NOTIFY_AT = process.env.HUBOT_LUNCHBOT_NOTIFY_AT || '0 0 10 * Tue *' # 10 am on Tuesday
+# https://www.npmjs.com/package/node-cron#cron-syntax
+NOTIFY_AT = process.env.HUBOT_LUNCHBOT_NOTIFY_AT || '0 0 10 * * 2' # 10 am on Tuesday, syntax is different from normal cron
 
 ##
 # clear the lunch order on a schedule
-CLEAR_AT = process.env.HUBOT_LUNCHBOT_CLEAR_AT || '0 0 0 * * *' # midnight
+# https://www.npmjs.com/package/node-cron#cron-syntax
+CLEAR_AT = process.env.HUBOT_LUNCHBOT_CLEAR_AT || '0 0 0 * * *' # midnight, syntax is different from normal cron
 
 ##
 # setup cron
