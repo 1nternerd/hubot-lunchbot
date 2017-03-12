@@ -34,14 +34,24 @@ ROOM = process.env.HUBOT_LUNCHBOT_ROOM || 'general'
 TIMEZONE = process.env.TZ || 'Europe/Berlin' # default timezone
 
 ##
-# Default lunch time
+# Default lunch notify time
 # https://www.npmjs.com/package/node-cron#cron-syntax
-NOTIFY_AT = process.env.HUBOT_LUNCHBOT_NOTIFY_AT || '0 0 10 * * 2' # 10 am on Tuesday, syntax is different from normal cron
+NOTIFY_AT = process.env.HUBOT_LUNCHBOT_NOTIFY_AT || '0 0 10 * * 1' # 10 am on Monday, syntax is different from normal cron
 
 ##
 # clear the lunch order on a schedule
 # https://www.npmjs.com/package/node-cron#cron-syntax
-CLEAR_AT = process.env.HUBOT_LUNCHBOT_CLEAR_AT || '0 0 0 * * *' # midnight, syntax is different from normal cron
+CLEAR_AT = process.env.HUBOT_LUNCHBOT_CLEAR_AT || '0 0 20 * * 2' # Evening on Tuesday, syntax is different from normal cron
+
+##
+# Exclude from ordering lunch selection
+# comma separated list of users to exclude from ordering lunch
+EXCLUDE = process.env.HUBOT_LUNCHBOT_EXCLUDE
+
+##
+# Lunchday
+#
+LUNCHDAY = process.env.HUBOT_LUNCHBOT_LUNCHDAY || 'Tuesday'
 
 ##
 # setup cron
@@ -54,7 +64,7 @@ module.exports = (robot) ->
 
   # Explain how to use the lunch bot
   MESSAGE = """
-  Let's order lunch by using the cool bot! You can say:
+  Let's order lunch for *#{LUNCHDAY}* by using the cool bot! You can say:
   #{robot.name} I want BLT Sandwich - adds "BLT Sandwich" to the list of items to be ordered
   #{robot.name} remove my order - removes your order
   #{robot.name} cancel all orders - cancels all the orders
@@ -134,9 +144,13 @@ module.exports = (robot) ->
   # Help decided who should either order, pickup or get
   robot.respond /who should (order|pickup|get) lunch?/i, (msg) ->
     orders = lunch.get().map (user) -> user
-    key = Math.floor(Math.random() * orders.length)
-    if orders[key]?
-      msg.send "@#{orders[key]} looks like you have to #{msg.match[1]} lunch today!"
+    excluded = EXCLUDE.split(',')
+    filtered = orders.filter (user) -> excluded.indexOf(user) is -1
+
+    key = Math.floor(Math.random() * filtered.length)
+
+    if filtered[key]?
+      msg.send "@#{filtered[key]} looks like you have to #{msg.match[1]} lunch today!"
     else
       msg.send "Hmm... Looks like no one has ordered any lunch yet today."
 
@@ -148,4 +162,4 @@ module.exports = (robot) ->
   ##
   # Just print out the details on how the lunch bot is configured
   robot.respond /lunch config/i, (msg) ->
-    msg.send "ROOM: #{ROOM} \nTIMEZONE: #{TIMEZONE} \nNOTIFY_AT: #{NOTIFY_AT} \nCLEAR_AT: #{CLEAR_AT}\n "
+    msg.send "ROOM: #{ROOM} \nTIMEZONE: #{TIMEZONE} \nNOTIFY_AT: #{NOTIFY_AT} \nCLEAR_AT: #{CLEAR_AT}\nEXCLUDE: #{EXCLUDE}\nLUNCHDAY: #{LUNCHDAY}\n  "
