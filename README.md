@@ -1,4 +1,4 @@
-# hubot-lunchbot
+# hubot-lunchbot [![Build Status](https://travis-ci.org/tholu/hubot-lunchbot.svg?branch=master)](https://travis-ci.org/tholu/hubot-lunchbot)
 
 A bot to help keep track of lunch orders for your office.
 
