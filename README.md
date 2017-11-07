@@ -33,3 +33,9 @@ Include package in Hubot's `external-scripts.json`:
     hubot lunch help                          # displays this help message
 
 
+## Development
+
+You can and should run tests if you change anything:
+```bash
+npm run test
+```

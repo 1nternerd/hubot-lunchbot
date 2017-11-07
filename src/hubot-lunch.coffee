@@ -128,6 +128,12 @@ module.exports = (robot) ->
     lunch.add msg.message.user.name, item
     msg.send "ok, added #{item} to your order."
 
+  robot.respond /@(.*) wants (.*)/i, (msg) ->
+    user = msg.match[1].trim()
+    item = msg.match[2].trim()
+    lunch.add user, item
+    msg.send "ok, added #{item} to @#{user} order."
+
   ##
   # Remove the persons items from the lunch order
   robot.respond /remove my order/i, (msg) ->
