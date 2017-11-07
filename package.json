@@ -4,7 +4,6 @@
   "version": "0.0.4",
   "author": "Thomas Lutz <thomaslutz.de@gmail.com>",
   "license": "MIT",
-
   "keywords": [
     "hubot",
     "hubot-scripts",
@@ -12,22 +11,26 @@
     "lunch",
     "lunchbot"
   ],
-
   "repository": {
     "type": "git",
     "url": "git://github.com/tholu/hubot-lunchbot.git"
   },
-
   "bugs": {
     "url": "https://github.com/tholu/hubot-lunchbot/issues"
   },
-
   "dependencies": {
-    "coffee-script": "~1.6",
+    "coffee-script": "~1.12.7",
     "cron": "1.0.5",
     "time": "0.11.4"
   },
-
-  "main": "index.coffee"
-
+  "main": "index.coffee",
+  "scripts": {
+    "test": "mocha --require coffee-script/register test --exit"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "co": "^4.6.0",
+    "hubot-test-helper": "^1.8.1",
+    "mocha": "^4.0.1"
+  }
 }
