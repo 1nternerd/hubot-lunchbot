@@ -26,6 +26,7 @@ Include package in Hubot's `external-scripts.json`:
 ## Commands
 
     hubot I want <food>                       # adds <food> to the list of items to be ordered
+    hubot @user wants <food>                  # adds <food> to the list of items to be ordered for @user
     hubot remove my order                     # removes your order
     hubot cancel all orders                   # cancels all the orders
     hubot lunch orders                        # lists all orders

@@ -13,6 +13,7 @@
 #
 # Commands:
 #   hubot I want <food> - adds <food> to the list of items to be ordered
+#   hubot @user wants <food> - adds <food> to the list of items to be ordered for @user
 #   hubot remove my order <food> - just removes the users lunch order
 #   hubot lunch orders - list all the items in the current lunch order
 #   hubot cancel all orders - clears out list of items to be ordered
@@ -66,6 +67,7 @@ module.exports = (robot) ->
   MESSAGE = """
   Let's order lunch for *#{LUNCHDAY}* by using the cool bot! You can say:
   #{robot.name} I want BLT Sandwich - adds "BLT Sandwich" to the list of items to be ordered
+  #{robot.name} @user wants Pizza - adds "Pizza" to the list of items to be ordered for @user
   #{robot.name} remove my order - removes your order
   #{robot.name} cancel all orders - cancels all the orders
   #{robot.name} lunch orders - lists all orders
