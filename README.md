@@ -1,4 +1,4 @@
-# hubot-lunchbot [![Build Status](https://travis-ci.org/tholu/hubot-lunchbot.svg?branch=master)](https://travis-ci.org/tholu/hubot-lunchbot) [![dependencies Status](https://david-dm.org/tholu/hubot-lunchbot/status.svg)](https://david-dm.org/tholu/hubot-lunchbot)
+# hubot-lunchbot [![Build Status](https://travis-ci.org/tholu/hubot-lunchbot.svg?branch=master)](https://travis-ci.org/tholu/hubot-lunchbot) [![dependencies Status](https://david-dm.org/tholu/hubot-lunchbot/status.svg)](https://david-dm.org/tholu/hubot-lunchbot) [![devDependencies Status](https://david-dm.org/tholu/hubot-lunchbot/dev-status.svg)](https://david-dm.org/tholu/hubot-lunchbot?type=dev)
 
 A bot to help keep track of lunch orders for your office.
 
