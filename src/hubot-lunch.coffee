@@ -11,14 +11,6 @@
 #   HUBOT_LUNCHBOT_CLEAR_AT
 #   TZ # eg. "America/Los_Angeles"
 #
-# Commands:
-#   hubot I want <food> - adds <food> to the list of items to be ordered
-#   hubot @user wants <food> - adds <food> to the list of items to be ordered for @user
-#   hubot remove my order <food> - just removes the users lunch order
-#   hubot lunch orders - list all the items in the current lunch order
-#   hubot cancel all orders - clears out list of items to be ordered
-#   hubot who should <order|pickup|get> lunch? - help choose who is responsible for lunch
-#   hubot lunch help - display help message
 # Notes:
 #   nom nom nom
 #
@@ -55,8 +47,27 @@ EXCLUDE = process.env.HUBOT_LUNCHBOT_EXCLUDE
 LUNCHDAY = process.env.HUBOT_LUNCHBOT_LUNCHDAY || 'Tuesday'
 
 ##
+# Restaurants in Salzburg
+#
+RESTAURANTS = [
+  "[Asia Wokman](https://www.lieferservice.at/asia-wok-man)",
+  "[De Cesare](http://www.decesare.at/index.php/speisen/aktuelle-angebote)",
+  "[Pommes Boutique](http://www.pommes-boutique.com/images/speisekarte_vorne_2016.pdf)",
+  "[Crepe Dor](https://www.lieferservice.at/weitere-infos-zu-crpe-dor)",
+  "[Way To India](https://www.lieferservice.at/way-to-india)",
+  "[Imbiss De Ladi](https://www.lieferservice.at/imbiss-de-ladi)",
+  "[Everest](https://www.lieferservice.at/restaurant-everest)"
+]
+
+##
 # setup cron
 CronJob = require("cron").CronJob
+
+shuffle = (array) ->
+  for index in [array.length-1..1]
+    randomIndex = Math.floor Math.random() * (index + 1)
+    [array[index], array[randomIndex]] = [array[randomIndex], array[index]]
+  array
 
 module.exports = (robot) ->
 
@@ -135,6 +146,9 @@ module.exports = (robot) ->
     item = msg.match[2].trim()
     lunch.add user, item
     msg.send "ok, added #{item} to @#{user} order."
+
+  robot.respond /restaurants/i, (msg) ->
+    msg.send ":fork_knife_plate: Restaurants: " + shuffle(RESTAURANTS).join(", ")
 
   ##
   # Remove the persons items from the lunch order
