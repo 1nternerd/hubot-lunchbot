@@ -79,6 +79,7 @@ module.exports = (robot) ->
   Let's order lunch for *#{LUNCHDAY}* by using the cool bot! You can say:
   #{robot.name} I want BLT Sandwich - adds "BLT Sandwich" to the list of items to be ordered
   #{robot.name} @user wants Pizza - adds "Pizza" to the list of items to be ordered for @user
+  #{robot.name} restaurants - shows a shuffled list of restaurants
   #{robot.name} remove my order - removes your order
   #{robot.name} cancel all orders - cancels all the orders
   #{robot.name} lunch orders - lists all orders
