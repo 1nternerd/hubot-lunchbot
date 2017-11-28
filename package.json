@@ -1,7 +1,7 @@
 {
   "name": "hubot-lunchbot",
   "description": "An easy way to keep track of lunch in your office",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "Thomas Lutz <thomaslutz.de@gmail.com>",
   "license": "MIT",
   "keywords": [
