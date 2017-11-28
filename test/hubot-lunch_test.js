@@ -45,4 +45,18 @@ describe('hello-world', function() {
             ]);
         });
     });
+
+    context('user wants to see a list of restaurants', function() {
+        beforeEach(function() {
+            return co(function*() {
+                yield this.room.user.say('lorem', '@hubot restaurants');
+            }.bind(this));
+        });
+
+        it('should list restaurants', function() {
+            expect(this.room.messages[0]).to.eql(['lorem', '@hubot restaurants']);
+            expect(this.room.messages[1][1]).to.match(/:fork_knife_plate: Restaurants:/);
+            expect(this.room.messages[1][1]).to.include("asia-wok-man");
+        });
+    });
 });
