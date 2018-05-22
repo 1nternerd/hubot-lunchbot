@@ -56,7 +56,8 @@ RESTAURANTS = [
   "[Crepe Dor](https://www.lieferservice.at/weitere-infos-zu-crpe-dor)",
   "[Way To India](https://www.lieferservice.at/way-to-india)",
   "[Imbiss De Ladi](https://www.lieferservice.at/imbiss-de-ladi)",
-  "[Everest](https://www.lieferservice.at/restaurant-everest)"
+  "[Everest](https://www.lieferservice.at/restaurant-everest)",
+  "[Risottomas](https://www.risottomas.at/speisekarte/)"
 ]
 
 ##
