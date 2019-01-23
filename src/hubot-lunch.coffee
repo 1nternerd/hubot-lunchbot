@@ -57,7 +57,8 @@ RESTAURANTS = [
   "[Way To India](https://www.lieferservice.at/way-to-india)",
   "[Imbiss De Ladi](https://www.lieferservice.at/imbiss-de-ladi)",
   "[Everest](https://www.lieferservice.at/restaurant-everest)",
-  "[Risottomas](https://www.risottomas.at/speisekarte/)"
+  "[Risottomas](https://www.risottomas.at/speisekarte/)",
+  "[Sa Thai Küche](https://sasthaikueche.jimdofree.com/men%C3%BC/)"
 ]
 
 ##
