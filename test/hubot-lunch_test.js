@@ -57,6 +57,7 @@ describe('hello-world', function() {
             expect(this.room.messages[0]).to.eql(['lorem', '@hubot restaurants']);
             expect(this.room.messages[1][1]).to.match(/:fork_knife_plate: Restaurants:/);
             expect(this.room.messages[1][1]).to.include("asia-wok-man");
+            expect(this.room.messages[1][1]).to.not.include("'"); // bug in RocketChat/Hubot, renders as entity &#39;
         });
     });
 });

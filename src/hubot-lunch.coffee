@@ -59,7 +59,7 @@ RESTAURANTS = [
   "[Everest](https://www.lieferservice.at/restaurant-everest)",
   "[Organic Pizza](https://www.organicpizza-salzburg.com/unser-angebot)",
   "[Leichtsinn](http://www.leichtsinn-bistro.at/category/tagesgerichte/)",
-  "[Sa's Thai-Küche](https://sasthaikueche.jimdofree.com/)"
+  "[Sas Thai-Küche](https://sasthaikueche.jimdofree.com/)"
 ]
 
 ##
