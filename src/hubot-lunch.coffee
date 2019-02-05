@@ -57,8 +57,9 @@ RESTAURANTS = [
   "[Way To India](https://www.lieferservice.at/way-to-india)",
   "[Imbiss De Ladi](https://www.lieferservice.at/imbiss-de-ladi)",
   "[Everest](https://www.lieferservice.at/restaurant-everest)",
-  "[Risottomas](https://www.risottomas.at/speisekarte/)",
-  "[Sa Thai Küche](https://sasthaikueche.jimdofree.com/men%C3%BC/)"
+  "[Organic Pizza](https://www.organicpizza-salzburg.com/unser-angebot)",
+  "[Leichtsinn](http://www.leichtsinn-bistro.at/category/tagesgerichte/)",
+  "[Sa's Thai-Küche](https://sasthaikueche.jimdofree.com/)"
 ]
 
 ##
@@ -133,7 +134,7 @@ module.exports = (robot) ->
 
   ##
   # List out all the orders
-  robot.respond /lunch orders$/i, (msg) ->
+  robot.respond /(orders|lunch orders)$/i, (msg) ->
     orders = lunch.get().map (user) -> "#{user}: #{robot.brain.data.lunch[user]}"
     msg.send orders.join("\n") || "No items in the lunch list."
 
