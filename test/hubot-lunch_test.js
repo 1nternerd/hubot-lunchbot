@@ -60,4 +60,32 @@ describe('hello-world', function() {
             expect(this.room.messages[1][1]).to.not.include("'"); // bug in RocketChat/Hubot, renders as entity &#39;
         });
     });
+
+    context('user wants to see a list of restaurants but forgets the s', function() {
+        beforeEach(function() {
+            return co(function*() {
+                yield this.room.user.say('lorem', '@hubot restaurant');
+            }.bind(this));
+        });
+
+        it('should list restaurants', function() {
+            expect(this.room.messages[0]).to.eql(['lorem', '@hubot restaurant']);
+            expect(this.room.messages[1][1]).to.match(/:fork_knife_plate: Restaurants:/);
+            expect(this.room.messages[1][1]).to.include("asia-wok-man");
+            expect(this.room.messages[1][1]).to.not.include("'"); // bug in RocketChat/Hubot, renders as entity &#39;
+        });
+    });
+
+    context('user wants to know who should pickup lunch', function() {
+        beforeEach(function() {
+            return co(function*() {
+                yield this.room.user.say('lorem', '@hubot who should order');
+            }.bind(this));
+        });
+
+        it('should tell that nobody ordered any lunch yet', function() {
+            expect(this.room.messages[0]).to.eql(['lorem', '@hubot who should order']);
+            expect(this.room.messages[1][1]).to.eql('Hmm... Looks like no one has ordered any lunch yet today.');
+        });
+    });
 });

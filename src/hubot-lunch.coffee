@@ -152,7 +152,7 @@ module.exports = (robot) ->
     lunch.add user, item
     msg.send "ok, added #{item} to @#{user} order."
 
-  robot.respond /restaurants/i, (msg) ->
+  robot.respond /restaurant(s)?/i, (msg) ->
     msg.send ":fork_knife_plate: Restaurants: " + shuffle(RESTAURANTS).join(", ")
 
   ##
@@ -169,9 +169,11 @@ module.exports = (robot) ->
 
   ##
   # Help decided who should either order, pickup or get
-  robot.respond /who should (order|pickup|get) lunch?/i, (msg) ->
+  robot.respond /who should (order|pickup|get)( lunch)?/i, (msg) ->
     orders = lunch.get().map (user) -> user
-    excluded = EXCLUDE.split(',')
+    if EXCLUDE
+      excluded = EXCLUDE.split(',')
+
     filtered = orders.filter (user) -> excluded.indexOf(user) is -1
 
     key = Math.floor(Math.random() * filtered.length)
