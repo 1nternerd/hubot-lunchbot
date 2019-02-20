@@ -52,14 +52,15 @@ LUNCHDAY = process.env.HUBOT_LUNCHBOT_LUNCHDAY || 'Tuesday'
 RESTAURANTS = [
   "[Asia Wokman](https://www.lieferservice.at/asia-wok-man)",
   "[De Cesare](http://www.decesare.at/index.php/speisen/aktuelle-angebote)",
-  "[Pommes Boutique](http://www.pommes-boutique.com/images/speisekarte_vorne_2016.pdf)",
+  "[Pommes Boutique](http://www.pommes-boutique.com/produkte.html)",
   "[Crepe Dor](https://www.lieferservice.at/weitere-infos-zu-crpe-dor)",
   "[Way To India](https://www.lieferservice.at/way-to-india)",
   "[Imbiss De Ladi](https://www.lieferservice.at/imbiss-de-ladi)",
   "[Everest](https://www.lieferservice.at/restaurant-everest)",
   "[Organic Pizza](https://www.organicpizza-salzburg.com/unser-angebot)",
   "[Leichtsinn](http://www.leichtsinn-bistro.at/category/tagesgerichte/)",
-  "[Sas Thai-Küche](https://sasthaikueche.jimdofree.com/)"
+  "[Sas Thai-Küche](https://sasthaikueche.jimdofree.com/)",
+  "[LOsteria](https://losteria.net/de/restaurants/restaurant/salzburg/)"
 ]
 
 ##
