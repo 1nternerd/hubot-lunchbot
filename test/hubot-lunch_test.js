@@ -76,7 +76,7 @@ describe('hello-world', function() {
         });
     });
 
-    context('user wants to know who should pickup lunch', function() {
+    context('user wants to know who should pickup lunch, but nobody has ordered yet', function() {
         beforeEach(function() {
             return co(function*() {
                 yield this.room.user.say('lorem', '@hubot who should order');
@@ -86,6 +86,24 @@ describe('hello-world', function() {
         it('should tell that nobody ordered any lunch yet', function() {
             expect(this.room.messages[0]).to.eql(['lorem', '@hubot who should order']);
             expect(this.room.messages[1][1]).to.eql('Hmm... Looks like no one has ordered any lunch yet today.');
+        });
+    });
+
+    context('user wants to know who should pickup lunch', function() {
+        beforeEach(function() {
+            return co(function*() {
+                yield this.room.user.say('lorem', '@hubot @ipsum wants Tofu Zitronengras');
+                yield this.room.user.say('lorem', '@hubot who should order');
+            }.bind(this));
+        });
+
+        it('should tell that @ipsum should pickup lunch', function() {
+            expect(this.room.messages).to.eql([
+                ['lorem', '@hubot @ipsum wants Tofu Zitronengras'],
+                ['hubot', 'ok, added Tofu Zitronengras to @ipsum order.'],
+                ['lorem', '@hubot who should order'],
+                ['hubot', '@ipsum looks like you have to order lunch today!']
+            ]);
         });
     });
 });

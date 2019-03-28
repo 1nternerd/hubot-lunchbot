@@ -59,7 +59,7 @@ RESTAURANTS = [
   "[Everest](https://www.lieferservice.at/restaurant-everest)",
   "[Organic Pizza](https://www.organicpizza-salzburg.com/unser-angebot)",
   "[Leichtsinn](http://www.leichtsinn-bistro.at/category/tagesgerichte/)",
-  "[Sas Thai-Küche](https://sasthaikueche.jimdofree.com/)",
+  "[Sas Thai-Küche](https://sasthaikueche.jimdofree.com/menü/)",
   "[LOsteria](https://losteria.net/de/restaurants/restaurant/salzburg/)"
 ]
 
@@ -109,6 +109,7 @@ module.exports = (robot) ->
 
     notify: ->
       robot.messageRoom ROOM, MESSAGE
+      robot.messageRoom ROOM, ":fork_knife_plate: Restaurants: " + shuffle(RESTAURANTS).join(", ")
 
   ##
   # Define things to be scheduled
@@ -173,6 +174,8 @@ module.exports = (robot) ->
     orders = lunch.get().map (user) -> user
     if EXCLUDE
       excluded = EXCLUDE.split(',')
+    else
+      excluded = []
 
     filtered = orders.filter (user) -> excluded.indexOf(user) is -1
 
