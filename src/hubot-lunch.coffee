@@ -51,7 +51,7 @@ LUNCHDAY = process.env.HUBOT_LUNCHBOT_LUNCHDAY || 'Tuesday'
 #
 RESTAURANTS = [
   "[Asia Wokman](https://www.lieferservice.at/asia-wok-man)",
-  "[De Cesare](http://www.decesare.at/index.php/speisen/aktuelle-angebote)",
+  "[De Cesare](http://www.decesare.at/?lang=de#menu)",
   "[Pommes Boutique](http://www.pommes-boutique.com/produkte.html)",
   "[Crepe Dor](https://www.lieferservice.at/weitere-infos-zu-crpe-dor)",
   "[Way To India](https://www.lieferservice.at/way-to-india)",
