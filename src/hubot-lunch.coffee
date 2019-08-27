@@ -53,7 +53,6 @@ RESTAURANTS = [
   "[Asia Wokman](https://www.lieferservice.at/asia-wok-man)",
   "[De Cesare](http://www.decesare.at/?lang=de#menu)",
   "[Pommes Boutique](http://www.pommes-boutique.com/produkte.html)",
-  "[Crepe Dor](https://www.lieferservice.at/weitere-infos-zu-crpe-dor)",
   "[Way To India](https://www.lieferservice.at/way-to-india)",
   "[Imbiss De Ladi](https://www.lieferservice.at/imbiss-de-ladi)",
   "[Everest](https://www.lieferservice.at/restaurant-everest)",
