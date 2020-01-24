@@ -1,7 +1,7 @@
 {
   "name": "hubot-lunchbot",
   "description": "An easy way to keep track of lunch in your office",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Thomas Lutz <thomaslutz.de@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "coffee-script": "~1.12.7",
-    "cron": "1.3.0"
+    "cron": "1.8.1"
   },
   "main": "index.coffee",
   "scripts": {
@@ -30,6 +30,6 @@
     "chai": "^4.2.0",
     "co": "^4.6.0",
     "hubot-test-helper": "^1.9.0",
-    "mocha": "^4.1.0"
+    "mocha": "^7.0.0"
   }
 }
