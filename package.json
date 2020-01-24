@@ -13,10 +13,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/tholu/hubot-lunchbot.git"
+    "url": "git://github.com/symptoma/hubot-lunchbot.git"
   },
   "bugs": {
-    "url": "https://github.com/tholu/hubot-lunchbot/issues"
+    "url": "https://github.com/symptoma/hubot-lunchbot/issues"
   },
   "dependencies": {
     "coffee-script": "~1.12.7",
