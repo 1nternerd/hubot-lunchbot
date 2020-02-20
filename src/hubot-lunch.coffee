@@ -59,7 +59,8 @@ RESTAURANTS = [
   "[Organic Pizza](https://www.organicpizza-salzburg.com/unser-angebot)",
   "[Leichtsinn](http://www.leichtsinn-bistro.at/category/tagesgerichte/)",
   "[Sas Thai-Küche](https://sasthaikueche.jimdofree.com/menü/)",
-  "[LOsteria](https://losteria.net/de/restaurants/restaurant/salzburg/)"
+  "[LOsteria](https://losteria.net/de/restaurants/restaurant/salzburg/)",
+  "[Uncle Falafel](https://www.lieferando.at/uncle-falfel)"
 ]
 
 ##
